@@ -13,11 +13,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Importer les routes
-from routes.imei import imei_bp
-from routes.auth import auth_bp
-from routes.ml import ml_bp
-from routes.stats import stats_bp
-
+from imei import imei_bp
+from auth import auth_bp
+from ml import ml_bp
+from stats import stats_bp
 def create_app():
     app = Flask(__name__)
 
