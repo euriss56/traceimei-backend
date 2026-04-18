@@ -9,7 +9,7 @@ services:
     plan: free
 
     # Commande pour installer les dépendances
-    buildCommand: pip install -r requirements.txt && python models/train.py
+   buildCommand: pip install -r requirements.txt && python train.py
 
     # Commande pour démarrer le serveur en production
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
