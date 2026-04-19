@@ -10,7 +10,7 @@ from flask_jwt_extended import jwt_required
 import numpy as np
 import os, joblib
 
-from utils.imei_utils import validate_imei, extract_imei_features
+from imei_utils import validate_imei, extract_imei_features
 
 ml_bp = Blueprint("ml", __name__)
 
