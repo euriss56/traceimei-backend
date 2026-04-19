@@ -7,7 +7,7 @@ Routes Stats — données pour le tableau de bord
 
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
-from utils.supabase_client import get_supabase
+from client_supabase import get_supabase
 
 stats_bp = Blueprint("stats", __name__)
 
