@@ -9,8 +9,8 @@ from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from datetime import datetime, timezone
 
-from utils.imei_utils import validate_imei, extract_imei_features
-from utils.supabase_client import get_supabase
+from imei_utils import validate_imei, extract_imei_features
+from client_supabase import get_supabase
 
 imei_bp = Blueprint("imei", __name__)
 
