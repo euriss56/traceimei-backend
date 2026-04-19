@@ -1,26 +1,19 @@
-# render.yaml — Configuration déploiement automatique sur Render.com
-# Ce fichier dit à Render comment lancer ton backend Flask
-
 services:
   - type: web
     name: traceimei-backend
     env: python
-    region: frankfurt  # Le plus proche de Cotonou / Afrique
+    region: frankfurt
     plan: free
-
-    # Commande pour installer les dépendances
-   buildCommand: pip install -r requirements.txt && python train.py
-
-    # Commande pour démarrer le serveur en production
+    runtime: python
+    pythonVersion: "3.11.8"
+    buildCommand: pip install -r requirements.txt && python train.py
     startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
-
-    # Variables d'environnement (à remplir dans le dashboard Render)
     envVars:
       - key: SUPABASE_URL
-        sync: false   # tu la renseignes manuellement dans Render
+        sync: false
       - key: SUPABASE_KEY
         sync: false
       - key: JWT_SECRET_KEY
-        generateValue: true   # Render génère automatiquement une valeur sécurisée
+        generateValue: true
       - key: FLASK_ENV
         value: production
