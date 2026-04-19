@@ -12,7 +12,7 @@ from flask_jwt_extended import (
 from datetime import datetime, timezone
 import hashlib, os
 
-from utils.supabase_client import get_supabase
+from client_supabase import get_supabase
 
 auth_bp = Blueprint("auth", __name__)
 
